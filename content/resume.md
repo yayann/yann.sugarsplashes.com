@@ -16,12 +16,12 @@ Passionate full-stack web application developer and technology leader with a str
 ## Experience
 
 ### CTO — CapStellar
-*Current*
+July 2025 - *Current*
 
 Leading technology at a VASP operating in the digital assets space, overseeing platform architecture, engineering strategy, and security.
 
-### Development Team Lead — Diadeis / SGSco
-*May 2021 – 2024 · Data Science Team / North America*
+### Software Engineering Manager — Diadeis / SGSco
+*May 2021 – July 2025 · Data Science Team / North America*
 
 - Rebuilt color profile system from scratch; developed search web application around Data Science API
 - **Tech:** Laravel, Node.js, Vue.js, Inertia.js, Microsoft Graph API, Azure SQL, Redis, Azure App Service, Azure Container Apps, Docker
