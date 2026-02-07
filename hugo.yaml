@@ -1,0 +1,83 @@
+baseURL: "https://yannlabour.github.io/"
+languageCode: en-us
+title: Yann Labour
+theme: PaperMod
+pagination:
+  pagerSize: 5
+
+params:
+  env: production
+  description: "CTO and full-stack engineer. Writing about engineering practices, automation, and system architecture."
+  author: Yann Labour
+  defaultTheme: auto
+  showShareButtons: true
+  showReadingTime: true
+  showPostNavLinks: true
+  showBreadCrumbs: true
+  showCodeCopyButtons: true
+  showToc: true
+  tocOpen: false
+  comments: false
+
+  homeInfoParams:
+    Title: "Hi, I'm Yann"
+    Content: >
+      CTO and full-stack engineer with over 17 years of experience building and scaling web applications.
+      I lead technology at [CapStellar](https://www.linkedin.com/company/capstellar/), a VASP operating in the
+      digital assets space, where I oversee platform architecture, engineering strategy, and security.
+
+
+      I write about engineering practices, automation, and system architecture.
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/yayann"
+    - name: linkedin
+      url: "https://linkedin.com/in/yannlabour"
+    - name: email
+      url: "mailto:yann@sugarsplashes.com"
+
+  assets:
+    favicon: "/favicon.ico"
+    disableFingerprinting: true
+
+  cover:
+    hiddenInList: false
+    hiddenInSingle: false
+
+  editPost:
+    URL: "https://github.com/yayann/yannlabour/tree/main/content"
+    Text: "Edit on GitHub"
+    appendFilePath: true
+
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 10
+    - identifier: blog
+      name: Blog
+      url: /posts/
+      weight: 20
+    - identifier: resume
+      name: Resume
+      url: /resume/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 40
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
