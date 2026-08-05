@@ -9,6 +9,8 @@ editPost:
   disabled: true
 ---
 
+<a class="hero-link primary resume-download" href="/Yann_Labour-Resume.pdf">download pdf &darr;</a>
+
 ## Summary
 
 CTO and full-stack engineer with 18 years across web platforms, DevOps, and system architecture. At CapStellar (a crypto/VASP) I lead a small engineering team and own architecture, infrastructure, security, and applied AI. I re-platformed a Node/Python monolith to Laravel microservices, shipped multi-exchange (Binance/Kraken) crypto products, and built an AI support agent that resolves about 1 in 3 tickets end-to-end. Specialist in Laravel, automation, and AI-driven operating leverage. Open to remote or relocation (Europe / UAE).

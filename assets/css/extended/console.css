@@ -223,6 +223,12 @@ button:focus-visible {
     color: var(--c-amber);
 }
 
+.post-content a.resume-download {
+    display: inline-block;
+    margin: 4px 0 12px;
+    box-shadow: none;
+}
+
 /* ---- home: post log ---- */
 
 .home-log {
