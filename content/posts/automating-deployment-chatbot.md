@@ -18,6 +18,8 @@ There's a bunch of techs involved here:
 - Chatroom
 - Bot
 
+![And the bot is really friendly](/images/blog/deployment.jpg)
+
 I'll go over each of these with workarounds/fixes for the main hurdles I encountered, but installation instructions will be *à la* [RTFM](http://en.wikipedia.org/wiki/RTFM). Be warned, some unix-fu and ssh-fu are required.
 
 ## Git server
@@ -60,6 +62,8 @@ deployer ALL=(ALL) NOPASSWD:/usr/sbin/service nginx restart
 
 Another thing, use SSH keys to give access to your git repos and servers to your deploy user.
 Little quirk for Laravel deployment, [you'll need an RSA key, not DSA](http://laravel.io/forum/03-15-2014-unable-to-connect-to-remote-server-with-ssh-key?page=1#reply-17102).
+
+![Use SSH keys!](/images/blog/deployment-ssh-keys.jpg)
 
 ## Javascript app deployment
 

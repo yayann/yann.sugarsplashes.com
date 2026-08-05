@@ -17,6 +17,8 @@ We tried a few other community tools over a year, until we finally decided to go
 If you have an entity which has various "statuses" or "states" or whatever the name of a property whose value is changed by users and drives interactions with your entity, you probably have a workflow in place.
 If you don't have a sort of state machine driving all that, you're probably in a world of pain.
 
+![Amirite?](/images/blog/statemachine.jpg)
+
 ### Benefits of a state machine
 
 - Express clearly which states are accessible from a given state
