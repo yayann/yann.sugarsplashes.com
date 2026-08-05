@@ -11,92 +11,74 @@ editPost:
 
 ## Summary
 
-Passionate full-stack web application developer and technology leader with a strong track record in web-based projects, DevOps, and open-source software. Dedicated to optimizing business processes through creative problem-solving and automation, resulting in enhanced efficiency and effectiveness.
+CTO and full-stack engineer with 17 years across web platforms, DevOps, and system architecture. At CapStellar (a crypto/VASP) I lead a small engineering team and own architecture, security, and applied AI. I re-platformed a Node/Python monolith to Laravel microservices, shipped multi-exchange (Binance/Kraken) crypto products, and built an AI support agent that resolves about 1 in 3 tickets end-to-end. Specialist in Laravel, automation, and AI-driven operating leverage. Open to remote or relocation (Europe / UAE).
 
 ## Experience
 
-### CTO — CapStellar
-July 2025 - *Current*
+### Chief Technology Officer (CTO) — CapStellar, Flow Corporation
+*July 2025 – Present · Remote / Mauritius*
 
-Leading technology at a VASP operating in the digital assets space, overseeing platform architecture, engineering strategy, and security.
+Virtual Asset Service Provider (VASP) — crypto portfolio automation.
+
+- Re-architected the platform (V2 to V3) from a Node.js/Python monolith to a Laravel microservices architecture across multiple production environments
+- Shipped core product end-to-end: automated multi-exchange (Binance + Kraken) index-rebalancing engine, zero-downtime Binance-to-Kraken migration, Earn/yield, and prepaid-wallet fee settlement
+- Built a Claude-based AI support agent (RAG + secure tool integration) that resolves ~31% of tickets end-to-end with zero human touch, letting the support team absorb a 4x volume surge without added headcount
+- Designed ~75 automation workflows and established continuous delivery (CI/CD, feature flags, event sourcing), shipping 200+ production merges per month with a three-person team
+- Owned technical remediation of an external penetration test and CIS/ANSSI configuration audit; co-authored ICT operational-resilience governance under the EU DORA regulation as interim ICT security lead
+- Sole owner of infrastructure: a ~20-server multi-provider fleet (DigitalOcean, Hetzner, IONOS) managed via Laravel Forge, a multi-region API with automated failover (Cloudflare Load Balancer, warm standby, MySQL read-replica routing), and a Tailscale zero-trust network
+- Built a single-pane-of-glass operations console monitoring the entire estate — server vitals, health checks, deploys, CI, uptime and security findings — with automated incident detection and Slack alerting
+
+**Tech:** Laravel, API Platform, Python, Node.js, React, Claude/LLM, RAG, MCP, n8n, PostgreSQL, MongoDB, BigQuery, Redis, Laravel Forge, Docker, CI/CD, Cloudflare (LB/WAF/Tunnels), Tailscale, gRPC
 
 ### Software Engineering Manager — Diadeis / SGSco
-*May 2021 – July 2025 · Data Science Team / North America*
+*May 2024 – June 2025 · Remote · Software Engineering team / Global*
 
-- Rebuilt color profile system from scratch; developed search web application around Data Science API
-- **Tech:** Laravel, Node.js, Vue.js, Inertia.js, Microsoft Graph API, Azure SQL, Redis, Azure App Service, Azure Container Apps, Docker
+- Rebuilt color profile system with Data Science team, creating industry-leading tool that strengthened company's market position
+- Developed client-facing search application integrating with Data Science team's API
+- Created automated file delivery solution saving US$45K/month globally
+- Built Adobe Illustrator/InDesign extension for automated solutions and content injection
+- Implemented critical automated quality check systems at group level
+
+**Tech:** Laravel, Node.js, Vue.js, Inertia.js, .NET Core, JS/Adobe ExtendScript, Azure SQL, MariaDB, Redis, Postgres, MongoDB, Terraform, Azure DevOps, GitHub Actions, Azure App Service, Container Apps, Docker
 
 ### Development Team Lead — Diadeis / SGSco
-*June 2019 – April 2021 · Operations / Mauritius*
+*May 2021 – April 2024 · Remote · Data Science team / North America*
 
-- Developed automated file delivery system saving ~US$45K/month globally
-- Built Adobe Illustrator/InDesign extensions for production automation
-- Created quality check systems for prepress workflows
-- **Tech:** Laravel + Nova, Node.js, Adobe ExtendScript, Azure Functions (.NET Core), MongoDB, PostgreSQL, MariaDB, Redis, GitHub Actions, GitLab CI/CD
+### Development Team Lead — Diadeis / SGSco
+*June 2019 – April 2021 · Mauritius · Operations / Mauritius site*
 
-### Senior Software Developer — Quantum Media
-*January 2019 – May 2019*
+### Co-founder and Lead Developer — Sugarsplashes Ltd
+*September 2015 – May 2019 · Mauritius*
 
-- Lead web development, feasibility studies, systems administration
+- Led year-long project for governmental health agency, securing renewal for second year
+- Partnered with Barclays Incubator startup to develop CX field proof-of-concept
+- Client-facing role for pitches, proposals and estimates
 
-### Co-founder — Sugarsplashes Ltd
-*September 2015 – 2019*
-
-- Government health agency projects
-- Barclays Incubator startup CX proof of concept
-- **Tech:** Laravel, AngularJS, Vue.js, SASS, MySQL
-
-### Lead Developer — TF Ltd
-*May 2014 – August 2015*
-
-- Transport web application startup, team of 4
-- **Tech:** Laravel, Yii, AngularJS, MySQL, MongoDB, Google Maps, microservices, REST API
-
-### Head of Web Department — Activeline (Harel Mallac)
-*October 2013 – April 2014*
-
-- Managing developers, technical lead, feasibility studies, systems administration
-
-### IT Manager — Evolution Prepresse
-*January 2010 – August 2013*
-
-- R&D, intranet/extranet project management workflow web application
-- Built InDesign/Illustrator scripts saving up to 50% production time
-- Systems administration (Mac OS X and Linux), managed 3-person team
-
-### Web Developer — BabelWEB / Universite de La Reunion
-*August 2008 – December 2009*
-
-- E-learning project (French, Italian, Spanish): XML/XSLT, JavaScript, PHP, Flash AS3
-
-### Deployment Engineer — TICE / Universite de La Reunion
-*January – October 2009*
-
-- Deployment of ORI-OAI, ESUP Portail, Nuxeo; data exchange tools
+**Tech:** Laravel, Vue.js, MySQL, Git, Docker, Ubuntu
 
 ## Education
 
-### Data Science BootCamp — Le Wagon (2022)
-Finals project "Deep Dive" — marine debris detection and classification using VGG19 transfer learning.
+### Data Science BootCamp — Le Wagon (2023)
+Finals project "Deep Dive" — marine debris detection using transfer learning with VGG19. Classified underwater images into 17 pollution categories with 60% accuracy.
 [GitHub](https://github.com/yayann/deep_dive)
 
-### Master (MSc) Informatique STIC — Universite de La Reunion (2009)
-
-### Licence (BSc) Informatique — Universite de La Reunion (2007)
+### Master (MSc) Computer Science — Université de la Réunion (2009)
+Information and Communication Sciences and Technologies
 
 ## Skills
 
 | Domain | Technologies |
 |--------|-------------|
-| **Backend** | PHP (Laravel), Python (FastAPI), Node.js |
-| **Frontend** | Vue.js, AngularJS, JavaScript/TypeScript, TailwindCSS, Bootstrap |
-| **Data** | MySQL, PostgreSQL, MongoDB, SQL Server, Redis, SQS |
-| **Data Science** | Python (Pandas, NumPy, Scikit-Learn, TensorFlow), Computer Vision |
-| **Cloud** | Azure (App Service, Container Apps, Functions, DevOps), AWS, Docker |
-| **Systems** | Linux (Ubuntu, Debian, CentOS), Nginx, HAProxy, Docker, CI/CD |
+| **Development** | PHP: Laravel & ecosystem (Horizon, Nova, Passport, Scout) · Python (FastAPI) · JavaScript: React, Vue.js, Node.js, jQuery, Adobe ExtendScript · TailwindCSS, Bootstrap · REST/gRPC APIs, SPAs, background jobs · SQS, Beanstalk |
+| **AI & Automation** | Claude / Anthropic API · RAG, vector search (PGVector) · Model Context Protocol (MCP) tools · n8n workflow automation · Agent evaluation, confidence scoring, human-in-the-loop |
+| **Data** | MySQL, MongoDB, PostgreSQL, SQL Server, BigQuery, Redis |
+| **Data Science** | Python (Pandas, NumPy, Scikit-Learn, TensorFlow) · Machine Learning fundamentals · Data processing and analysis |
+| **Cloud & DevOps** | Multi-provider VPS fleet: DigitalOcean, Hetzner, IONOS, AWS (Laravel Forge) · Azure (App Service, Container Apps, Functions, DevOps) · Multi-region HA: Cloudflare Load Balancing, warm standby, DB read-replica routing · Docker · CI/CD (GitHub Actions, Azure DevOps), zero-downtime deploys · Terraform |
+| **Security & Domain** | Application security, penetration-test remediation (OWASP, CIS/ANSSI) · Encryption & key management · Digital assets / crypto (CeFi), Fintech · VASP & regulatory transition (MiCA, DORA) |
+| **Systems** | Linux fleet administration (Ubuntu, Debian) · Nginx, Apache, PHP-FPM, Octane/FrankenPHP · Zero-trust networking: Tailscale, Cloudflare Access, Tunnels, WAF · Monitoring & observability: health checks, heartbeats, uptime/cron monitoring, incident alerting · Microservices architecture |
 
 ## Languages
 
 - **English** — Fluent
-- **French** — Mother tongue
+- **French** — Native
 - **Spanish** — Basic
