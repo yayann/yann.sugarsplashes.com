@@ -1,0 +1,60 @@
+{{- define "main" }}
+
+<section class="console-hero">
+    <p class="hero-eyebrow">cto &amp; full-stack engineer</p>
+    <h1 class="hero-name">Yann Labour</h1>
+    <p class="hero-desc">
+        I lead technology at <a href="https://www.linkedin.com/company/capstellar/" rel="noopener" target="_blank">CapStellar</a>,
+        a digital-assets platform &mdash; architecture, security, and applied AI.
+        Here I write about engineering practices, automation, and system architecture.
+    </p>
+
+    <dl class="vitals">
+        <div class="vital">
+            <dt>location</dt>
+            <dd>Mauritius &middot; UTC+4</dd>
+        </div>
+        <div class="vital">
+            <dt>in production</dt>
+            <dd>17 years</dd>
+        </div>
+        <div class="vital">
+            <dt>focus</dt>
+            <dd>Laravel &middot; applied AI &middot; infrastructure</dd>
+        </div>
+        <div class="vital">
+            <dt>status</dt>
+            <dd><span class="status-dot" aria-hidden="true"></span>open to remote / relocation</dd>
+        </div>
+    </dl>
+
+    <nav class="hero-links" aria-label="Primary links">
+        <a class="hero-link primary" href="{{ "resume/" | absLangURL }}">resume/</a>
+        <a class="hero-link" href="{{ "about/" | absLangURL }}">about/</a>
+        <a class="hero-link" href="https://github.com/yayann" rel="noopener" target="_blank">github &nearr;</a>
+        <a class="hero-link" href="https://linkedin.com/in/yannlabour" rel="noopener" target="_blank">linkedin &nearr;</a>
+    </nav>
+</section>
+
+<section class="home-log">
+    <h2 class="section-label"><span>posts/</span></h2>
+
+    {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
+    {{- range first 4 $pages }}
+    <article class="log-entry">
+        <a href="{{ .Permalink }}" class="log-entry-link">
+            <header class="log-entry-head">
+                <time class="log-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+                <h3 class="log-title">{{ .Title }}</h3>
+            </header>
+            <p class="log-summary">{{ .Summary | plainify }}</p>
+            <span class="log-meta">{{ .ReadingTime }} min read{{ with .Params.tags }} &middot; {{ delimit . " " }}{{ end }}</span>
+        </a>
+    </article>
+    {{- end }}
+
+    <a class="all-posts" href="{{ "posts/" | absLangURL }}">all posts &rarr;</a>
+</section>
+
+{{- end }}

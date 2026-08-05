@@ -9,7 +9,10 @@ params:
   env: production
   description: "CTO and full-stack engineer. Writing about engineering practices, automation, and system architecture."
   author: Yann Labour
-  defaultTheme: auto
+  defaultTheme: dark
+  disableThemeToggle: true
+  mainSections:
+    - posts
   showShareButtons: true
   showReadingTime: true
   showPostNavLinks: true
@@ -46,7 +49,7 @@ params:
     hiddenInSingle: false
 
   editPost:
-    URL: "https://github.com/yayann/yannlabour/tree/main/content"
+    URL: "https://github.com/yayann/yann.sugarsplashes.com/tree/main/content"
     Text: "Edit on GitHub"
     appendFilePath: true
 
