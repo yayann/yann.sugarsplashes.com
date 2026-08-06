@@ -415,6 +415,55 @@ button:focus-visible {
     border-color: var(--c-grid);
 }
 
+.post-content p > img:only-child:not(.gif-inline) {
+    display: block;
+    margin: 24px auto;
+}
+
+.post-content img.meme {
+    display: block;
+    max-width: 360px;
+    width: 100%;
+    margin: 24px auto;
+}
+
+.post-content img.gif-inline {
+    display: inline-block;
+    height: 72px;
+    width: auto;
+    vertical-align: middle;
+    margin-left: 10px;
+    border-radius: 6px;
+}
+
+.post-content img.gif-inline.gif-lg {
+    height: 150px;
+}
+
+.post-content figure {
+    margin: 24px auto;
+    text-align: center;
+}
+
+.post-content figure figcaption,
+.post-content figure figcaption p {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--c-dim);
+    margin: 8px 0 0;
+    text-align: center;
+}
+
+.post-content figure figcaption a {
+    color: var(--c-dim);
+    box-shadow: inset 0 -1px 0 var(--c-grid);
+}
+
+.post-content figure figcaption a:hover {
+    color: var(--c-amber);
+    box-shadow: inset 0 -1px 0 var(--c-amber);
+}
+
 .post-tags a,
 .paginav {
     font-family: var(--font-mono);
