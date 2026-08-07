@@ -1,3 +1,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+<script defer src="https://cloud.umami.is/script.js" data-website-id="e7f16a88-e3ad-4aa9-9653-89332a5e08e0"></script>
+{{- end }}

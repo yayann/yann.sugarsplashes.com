@@ -72,10 +72,6 @@ menu:
       url: /search/
       weight: 40
 
-services:
-  googleAnalytics:
-    ID: G-RYTCSXL7WS
-
 outputs:
   home:
     - HTML
