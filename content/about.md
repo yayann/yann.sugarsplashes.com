@@ -1,5 +1,6 @@
 ---
 title: "About"
+description: "Yann Labour, CTO and full-stack engineer based in Mauritius: Laravel, applied AI, and infrastructure for small teams. 18 years building software."
 layout: "single"
 showToc: false
 showReadingTime: false

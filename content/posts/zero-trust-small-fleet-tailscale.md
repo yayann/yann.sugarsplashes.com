@@ -5,6 +5,7 @@ draft: false
 tags: ["infrastructure", "tailscale", "security", "networking", "devops"]
 categories: ["infrastructure"]
 summary: "How a Tailscale mesh turned servers on four hosting providers into one private network, and the operational rules that keep it clean: tags, key expiry, explicit public holes."
+description: "How a Tailscale mesh turned servers on four hosting providers into one private network, plus the operational rules that keep it from decaying."
 showToc: true
 ---
 

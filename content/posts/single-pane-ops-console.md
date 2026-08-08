@@ -5,6 +5,7 @@ draft: false
 tags: ["infrastructure", "monitoring", "laravel", "devops", "observability"]
 categories: ["infrastructure"]
 summary: "Why I built our operations console instead of buying one, and the design rules that keep it trustworthy: read-only collectors, flap-resistant alerting, and a dead-man's switch."
+description: "Why I built a monitoring console for a 20-server fleet instead of buying one: read-only collectors, flap-resistant alerting, and a dead-man's switch."
 showToc: true
 ---
 

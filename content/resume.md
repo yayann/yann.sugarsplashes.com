@@ -1,5 +1,6 @@
 ---
 title: "Resume"
+description: "Resume of Yann Labour, CTO and full-stack engineer: CapStellar, Diadeis/SGSco, Laravel, applied AI, DevOps, and 18 years building and running software."
 layout: "single"
 showToc: true
 tocOpen: true

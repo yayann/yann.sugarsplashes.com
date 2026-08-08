@@ -2,6 +2,7 @@ baseURL: "https://yann.sugarsplashes.com"
 languageCode: en-us
 title: Yann Labour
 theme: PaperMod
+enableRobotsTXT: true
 pagination:
   pagerSize: 5
 

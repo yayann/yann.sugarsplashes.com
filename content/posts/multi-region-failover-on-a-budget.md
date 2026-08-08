@@ -5,6 +5,7 @@ draft: false
 tags: ["infrastructure", "cloudflare", "mysql", "high-availability", "laravel"]
 categories: ["infrastructure"]
 summary: "How we gave a Laravel API a warm standby on another continent with a Cloudflare Load Balancer, a read replica, and a short list of deliberate rules. It is not active-active, and that's the point."
+description: "How we gave a Laravel API a cross-continent warm standby with a Cloudflare Load Balancer and a read replica, on a small-company budget. Not active-active."
 showToc: true
 ---
 
