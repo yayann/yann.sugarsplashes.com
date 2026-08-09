@@ -1,0 +1,66 @@
+{{- /* Generates a 1200x630 social share card in the site's console style.
+       Overlays the page title (word-wrapped, size adapts to length) onto
+       assets/og/base.png. Returns the permalink of the generated image. */ -}}
+{{- $base := resources.Get "og/base.png" -}}
+{{- $mono := resources.Get "fonts/mono-semibold.ttf" -}}
+{{- $sans := resources.Get "fonts/sans-regular.ttf" -}}
+
+{{- $title := .Title -}}
+{{- if .IsHome }}{{ $title = "Yann Labour" }}{{ end -}}
+
+{{- /* eyebrow: section + date for posts, page name elsewhere */ -}}
+{{- $eyebrow := "cto & full-stack engineer" -}}
+{{- if and .IsPage (eq .Section "posts") -}}
+  {{- $eyebrow = printf "posts/ · %s" (.Date.Format "2006-01-02") -}}
+{{- else if .IsPage -}}
+  {{- $eyebrow = printf "%s/" (lower .Title) -}}
+{{- end -}}
+
+{{- /* Wrap at $w characters. Widths are chosen so a line always fits the
+       1008px text column at its font size — IBM Plex Mono advances 0.6em,
+       so 34 chars at 46px and 47 chars at 34px both fit. Overflowing lines
+       would be re-wrapped by images.Text itself and collide with the next. */ -}}
+{{- $wrap := slice -}}
+{{- range $w := (slice 34 47) -}}
+  {{- if or (eq (len $wrap) 0) (gt (len $wrap) 3) -}}
+    {{- $lines := slice -}}
+    {{- $cur := "" -}}
+    {{- range (split $title " ") -}}
+      {{- $try := cond (eq $cur "") . (printf "%s %s" $cur .) -}}
+      {{- if and (gt (len $try) $w) (ne $cur "") -}}
+        {{- $lines = $lines | append $cur -}}
+        {{- $cur = . -}}
+      {{- else -}}
+        {{- $cur = $try -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if ne $cur "" }}{{ $lines = $lines | append $cur }}{{ end -}}
+    {{- $wrap = $lines -}}
+  {{- end -}}
+{{- end -}}
+{{- if gt (len $wrap) 4 }}{{ $wrap = first 4 $wrap }}{{ end -}}
+
+{{- $n := len $wrap -}}
+{{- $size := 46 -}}{{- $step := 62 -}}
+{{- if ge $n 4 }}{{ $size = 34 }}{{ $step = 48 }}{{ end -}}
+{{- $top := 258 -}}
+
+{{- $img := $base -}}
+{{- $img = $img.Filter (images.Text $eyebrow (dict
+      "color" "#e5a54f" "size" 26 "x" 96 "y" 200 "font" $mono)) -}}
+{{- range $i, $line := $wrap -}}
+  {{- $img = $img.Filter (images.Text $line (dict
+        "color" "#edf3f9" "size" $size "x" 96 "y" (add $top (mul $i $step)) "font" $mono)) -}}
+{{- end -}}
+
+{{- /* description sits below the title block, only when there is room */ -}}
+{{- $descY := add (add $top (mul $n $step)) 14 -}}
+{{- $desc := .Description -}}
+{{- if and (not $desc) (or .IsHome .IsSection) }}{{ $desc = site.Params.description }}{{ end -}}
+{{- if and $desc (lt $descY 452) -}}
+  {{- $d := $desc -}}
+  {{- if gt (len $d) 78 }}{{ $d = printf "%s…" (substr $d 0 77) }}{{ end -}}
+  {{- $img = $img.Filter (images.Text $d (dict
+        "color" "#c7d3df" "size" 23 "x" 96 "y" $descY "font" $sans)) -}}
+{{- end -}}
+{{- $img.Permalink -}}
