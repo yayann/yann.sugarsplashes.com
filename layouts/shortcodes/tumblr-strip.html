@@ -7,8 +7,11 @@
 {{- $blog := "ioanneslavoro" -}}
 {{- $count := 4 -}}
 {{- $feed := printf "https://%s.tumblr.com/api/read?num=10" $blog -}}
+{{- /* Tumblr's WAF 403s Hugo's default user agent from datacenter IPs
+       (e.g. GitHub Actions runners); a browser UA gets through. */ -}}
+{{- $opts := dict "headers" (dict "User-Agent" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36") -}}
 {{- $items := slice -}}
-{{- with try (resources.GetRemote $feed) -}}
+{{- with try (resources.GetRemote $feed $opts) -}}
   {{- with .Err -}}
     {{- warnf "tumblr-strip: feed fetch failed: %s" . -}}
   {{- else with .Value -}}
@@ -33,7 +36,7 @@
           {{- end -}}
         {{- end -}}
         {{- if $src -}}
-          {{- with try (resources.GetRemote $src) -}}
+          {{- with try (resources.GetRemote $src $opts) -}}
             {{- with .Err -}}
               {{- warnf "tumblr-strip: image fetch failed: %s" . -}}
             {{- else with .Value -}}
