@@ -1,0 +1,62 @@
+{{- /* Latest photos from the Tumblr food blog, fetched and resized at build
+       time so the rendered page makes no third-party requests. Posts arrive
+       as "Regular" type with the image inside NPF HTML, so the first image
+       URL is pulled out of the post body (photo-url is kept as a fallback
+       for classic photo posts). Renders nothing, with a build warning, if
+       the feed is unreachable. */ -}}
+{{- $blog := "ioanneslavoro" -}}
+{{- $count := 4 -}}
+{{- $feed := printf "https://%s.tumblr.com/api/read?num=10" $blog -}}
+{{- $items := slice -}}
+{{- with try (resources.GetRemote $feed) -}}
+  {{- with .Err -}}
+    {{- warnf "tumblr-strip: feed fetch failed: %s" . -}}
+  {{- else with .Value -}}
+    {{- $data := .Content | transform.Unmarshal -}}
+    {{- $posts := $data.posts.post | default slice -}}
+    {{- if reflect.IsMap $posts -}}{{- $posts = slice $posts -}}{{- end -}}
+    {{- range $posts -}}
+      {{- $post := . -}}
+      {{- if lt (len $items) $count -}}
+        {{- $src := "" -}}
+        {{- with index . "photo-url" -}}
+          {{- if reflect.IsSlice . -}}
+            {{- $src = index (index . 0) "#text" -}}
+          {{- else -}}
+            {{- $src = index . "#text" -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if not $src -}}
+          {{- $body := printf "%v" (index . "regular-body" | default "") -}}
+          {{- with findRE `https://64\.media\.tumblr\.com/[^"\s]+` $body 1 -}}
+            {{- $src = index . 0 -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $src -}}
+          {{- with try (resources.GetRemote $src) -}}
+            {{- with .Err -}}
+              {{- warnf "tumblr-strip: image fetch failed: %s" . -}}
+            {{- else with .Value -}}
+              {{- $thumb := .Fill "480x480 webp q80" -}}
+              {{- $slug := index $post "-slug" | default "" -}}
+              {{- $href := printf "https://www.tumblr.com/%s/%s/%s" $blog (index $post "-id") $slug -}}
+              {{- $alt := cond (ne $slug "") (humanize $slug) "Food photo" -}}
+              {{- $items = $items | append (dict "img" $thumb "href" $href "alt" $alt) -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else -}}
+    {{- warnf "tumblr-strip: unable to fetch %q" $feed -}}
+  {{- end -}}
+{{- end -}}
+{{- if $items }}
+<div class="tumblr-strip">
+  {{- range $items }}
+  <a href="{{ .href }}" title="{{ .alt }}">
+    <img src="{{ .img.RelPermalink }}" width="{{ .img.Width }}" height="{{ .img.Height }}" alt="{{ .alt }}" loading="lazy">
+  </a>
+  {{- end }}
+</div>
+{{- end }}

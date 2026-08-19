@@ -35,4 +35,8 @@ I like the builder's version of the CTO job: close enough to the code to be dang
 
 Off the clock you'll find me [cooking](https://www.tumblr.com/ioanneslavoro) (Mediterranean and Asian, mostly), buried in science fiction (Asimov, Philip K. Dick, Brandon Sanderson), or tinkering with home automation. I'm also an active member of the [Laravel Mauritius](https://www.meetup.com/laravel-mauritius/) community and occasionally give technical talks. I'm based in Mauritius.
 
+Latest from the kitchen:
+
+{{< tumblr-strip >}}
+
 *Want to talk architecture, AI automation, or digital assets? [Reach me by email](mailto:yann@sugarsplashes.com), or find me on [LinkedIn](https://linkedin.com/in/yannlabour) and [GitHub](https://github.com/yayann).*

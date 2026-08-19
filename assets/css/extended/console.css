@@ -585,3 +585,41 @@ button:focus-visible {
         padding-left: 14px;
     }
 }
+
+/* ---- tumblr strip: build-time food-blog thumbnails on the about page ---- */
+
+.tumblr-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 16px 0 8px;
+}
+
+.tumblr-strip a {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--c-grid);
+    border-radius: var(--radius);
+    background: var(--c-panel);
+    box-shadow: none;
+}
+
+.tumblr-strip a:hover {
+    border-color: var(--c-amber);
+}
+
+.tumblr-strip img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    margin: 0;
+    border-radius: 0;
+}
+
+@media (max-width: 600px) {
+    .tumblr-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
