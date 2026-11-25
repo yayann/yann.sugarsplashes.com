@@ -48,6 +48,7 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
           TZ: Indian/Mauritius
+          HUGO_PARAMS_PHONE: ${{ secrets.SITE_PHONE }}
         run: |
           hugo \
             --gc \

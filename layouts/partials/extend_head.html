@@ -12,3 +12,22 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{{ .Title }} — yann.sugarsplashes.com">
 <meta name="twitter:image:alt" content="{{ .Title }} — yann.sugarsplashes.com">
+{{- if .HasShortcode "phone" }}
+{{- /* Rebuilds the link emitted by the phone shortcode. */}}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var plain = "0123456789+ ";
+  var cipher = "qwertyuiop;%";
+  Array.prototype.forEach.call(document.querySelectorAll(".contact-phone[data-c]"), function (el) {
+    var value = el.getAttribute("data-c").split("").map(function (c) {
+      var i = cipher.indexOf(c);
+      return i === -1 ? "" : plain.charAt(i);
+    }).join("");
+    var link = document.createElement("a");
+    link.href = "tel:" + value.replace(/[^+0-9]/g, "");
+    link.textContent = value;
+    el.replaceChildren(link);
+  });
+});
+</script>
+{{- end }}

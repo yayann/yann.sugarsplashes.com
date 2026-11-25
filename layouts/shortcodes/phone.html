@@ -1,0 +1,21 @@
+{{- /* Emits the phone number as a tel: link assembled client-side. The number
+       is supplied at build time via HUGO_PARAMS_PHONE (a repo secret in CI),
+       never from content, so it stays out of this public repository. Each
+       character is substituted for a letter or punctuation mark, so the served
+       HTML holds no digit sequence for a harvester to match. The decoder lives
+       in extend_head.html. */ -}}
+{{- $raw := site.Params.phone -}}
+{{- if not $raw -}}
+  {{- warnf "phone shortcode: HUGO_PARAMS_PHONE unset, phone omitted from %s" .Page.Path -}}
+{{- else -}}
+  {{- $plain := "0123456789+ " -}}
+  {{- $cipher := "qwertyuiop;%" -}}
+  {{- if not (findRE `^[0-9+ ]+$` $raw) -}}
+    {{- errorf "phone shortcode: HUGO_PARAMS_PHONE must contain only digits, spaces and +" -}}
+  {{- end -}}
+  {{- $out := slice -}}
+  {{- range (split $raw "") -}}
+    {{- $out = $out | append (substr $cipher (len (index (split $plain .) 0)) 1) -}}
+  {{- end -}}
+<span class="contact-phone" data-c="{{ delimit $out "" }}"><noscript>number is on the <a href="/Yann_Labour-Resume.pdf">pdf</a></noscript></span>
+{{- end -}}
